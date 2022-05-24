@@ -1,4 +1,5 @@
 import { getCurrentPage } from "./utils";
+import { ResponseData } from '../type'
 
 const mapCharactersResponse = ({
   info,

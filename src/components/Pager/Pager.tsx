@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { Dispatch } from "redux";
 import { fetchAllCharacters as fetchPagerChars } from "../../services";
 import { setAllCharacters } from "../../reducer/actions";
+import { DataResponse, PaginationInfo } from '../../type'
 
 const Pager = () => {
   const dispatch: Dispatch<any> = useDispatch();
@@ -13,9 +14,12 @@ const Pager = () => {
 
   const { current, next, prev, pages }: PaginationInfo = paginationInfo;
 
-  console.log({
-    paginationInfo
-  });
+  // useEffect(() => {
+  //   console.log({
+  //     paginationInfo
+  //   });
+  // }, [])
+
 
   const fetchCharacters = async (paginatorOption: "next" | "prev") => {
     const payload = await fetchPagerChars(paginatorOption);

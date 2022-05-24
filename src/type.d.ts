@@ -35,17 +35,21 @@ interface DataResponse {
   paginationInfo: PaginationInfo;
 }
 
+export type Info = {
+  count: number;
+  pages: number;
+  next: string | null;
+  prev: string | null;
+  currentPage?: string;
+};
+
+export type PaginatorOption = "next" | "prev";
+
 interface ResponseData {
-  info: {
-    count: number;
-    pages: number;
-    next: string | null;
-    prev: string | null;
-    currentPage?: string;
-  };
+  info: Info;
   results: CharactersState;
   baseCharactersUrl?: string;
-  paginatorOption?: "next" | "prev";
+  paginatorOption?: PaginatorOption;
 }
 
 interface PaginationInfo {
@@ -53,4 +57,9 @@ interface PaginationInfo {
   next: string | null;
   prev: string | null;
   pages: number;
+}
+
+export type ActionReducer = {
+  type: string;
+  payload: DataResponse;
 }

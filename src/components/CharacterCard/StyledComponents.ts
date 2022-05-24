@@ -13,7 +13,7 @@ const Card = styled.div`
 `;
 
 const CardImage = styled.div`
-  background-image: ${({ image }) => `url('${image}')`};
+  background-image: ${({ image }: {image: string}) => `url('${image}')`};
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -46,7 +46,7 @@ const SpecieStatus = styled.div`
 
 const IsAliveCircle = styled.span`
   border-radius: 50%;
-  background-color: ${({ bg }) => bg};
+  background-color: ${({ bg }: { bg: string }) => bg};
   display: inline-block;
   height: 6px;
   margin-right: 5px;

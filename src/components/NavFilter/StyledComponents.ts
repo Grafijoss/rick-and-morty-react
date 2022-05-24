@@ -1,16 +1,11 @@
 import styled from "styled-components";
-import { StyledProps } from "../../types";
-
-interface Props extends StyledProps {
-  active: string;
-}
 
 const NavFilterContainer = styled.nav`
   background: #f2f2f2;
   border-bottom: solid 3px #cccccc;
   height: 80px;
   margin: 0 auto;
-  max-width: ${({ theme }: Props) => `${theme.widthContainer}px`};
+  max-width: ${({ theme }: {theme: { widthContainer: number }}) => `${theme.widthContainer}px`};
   width: 100%;
 `;
 
@@ -26,7 +21,7 @@ const NavFilterBUtton = styled.li`
   position: relative;
   width: 12.28%;
 
-  ${({ active }: Props) =>
+  ${({ active }: {active?: boolean}) =>
     active &&
     `
       &:before {

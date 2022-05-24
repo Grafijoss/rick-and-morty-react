@@ -1,4 +1,5 @@
 import * as types from "./types";
+import { InitialState, ActionReducer } from '../type'
 
 const initialState: InitialState = {
   characters: [],
@@ -17,7 +18,7 @@ const initialState: InitialState = {
   }
 };
 
-export const reducer = (state: InitialState = initialState, action) => {
+export const reducer = (state: InitialState = initialState, action: ActionReducer) => {
   switch (action.type) {
     case types.GET_ALL_CHARACTERS:
       return {
