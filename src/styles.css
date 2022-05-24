@@ -1,0 +1,14 @@
+@import "./normalize.css";
+
+:root {
+  --background-body: #ffffff;
+  --background-card: #3c3e44;
+  --background-gray: #e0e0e0;
+  --background-active: #34c759;
+  --background-green: #11555f;
+  --text-white: #ffffff;
+  --text-black: #000000;
+  --text-gray: #828282;
+  --text-orange: #ff9800;
+  --width-container: 1120px;
+}
