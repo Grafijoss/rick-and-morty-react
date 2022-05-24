@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { createStore } from "redux";
-import { reducer } from "./reducer/reducer";
+import { configureStore } from '@reduxjs/toolkit'
 import { Provider } from "react-redux";
+import rootReducer from './Slices'
 
 import App from "./App";
-const store = createStore(reducer);
+const store = configureStore({ reducer: rootReducer })
 
 
 const root = ReactDOM.createRoot(

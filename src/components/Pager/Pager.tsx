@@ -2,15 +2,16 @@ import { useSelector } from "react-redux";
 import { PagerContainer, PagerButton, PagerText } from "./StyledComponents";
 import { useDispatch } from "react-redux";
 import { Dispatch } from "redux";
-import { fetchAllCharacters as fetchPagerChars } from "../../services";
-import { setAllCharacters } from "../../reducer/actions";
 import { DataResponse, PaginationInfo } from '../../type'
+import { charactersSelector } from '../../Slices/characters'
 
 const Pager = () => {
   const dispatch: Dispatch<any> = useDispatch();
-  const paginationInfo = useSelector(
-    ({ paginationInfo }: DataResponse) => paginationInfo
-  );
+  // const paginationInfo = useSelector(
+  //   ({ paginationInfo }: DataResponse) => paginationInfo
+  // );
+
+  const { paginationInfo }: any = useSelector(charactersSelector)
 
   const { current, next, prev, pages }: PaginationInfo = paginationInfo;
 
@@ -22,8 +23,7 @@ const Pager = () => {
 
 
   const fetchCharacters = async (paginatorOption: "next" | "prev") => {
-    const payload = await fetchPagerChars(paginatorOption);
-    dispatch(setAllCharacters(payload));
+    // dispatch(fetchCharacters(paginatorOption))
   };
 
   const nextPage = fetchCharacters("next");

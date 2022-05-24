@@ -9,7 +9,6 @@ const mapCharactersResponse = ({
 }: ResponseData) => {
   return {
     characters: results,
-    charactersFilter: results,
     paginationInfo: {
       ...info,
       current: getCurrentPage({ paginatorOption, info }),

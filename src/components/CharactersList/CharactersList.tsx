@@ -2,12 +2,15 @@ import { useSelector, shallowEqual } from "react-redux";
 import CharacterCard from "../CharacterCard/CharacterCard";
 import { CharacterListContainer } from "./StyledComponents";
 import { CharactersState, InitialState, Char} from '../../type'
+import { charactersSelector } from '../../Slices/characters'
 
 const CharactersList = () => {
-  const characters: CharactersState = useSelector(
-    ({ charactersFilter }: InitialState) => charactersFilter,
-    shallowEqual
-  );
+  // const characters: CharactersState = useSelector(
+  //   ({ charactersFilter }: InitialState) => charactersFilter,
+  //   shallowEqual
+  // );
+
+  const { characters }: any = useSelector(charactersSelector)
 
   return (
     <CharacterListContainer>

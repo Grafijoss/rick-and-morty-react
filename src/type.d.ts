@@ -27,6 +27,7 @@ interface InitialState {
     interestingCharacters: Array<CharactersState>;
     episodes: Array<object>;
   };
+  loading: boolean;
 }
 
 interface DataResponse {
